@@ -124,7 +124,7 @@ export default {
   mounted() {},
 };
 $(function () {
-  $(".dati").click(function () {
+  $(".times-box").click(function () {
     $(".firecracker").fadeIn("show", function () {
       $(".firecracker").fadeOut("slow", function () {
         $(".firecracker").fadeIn("show", function () {

@@ -20,13 +20,9 @@
           </div>
         </div>
         <div class="block3-2">
-          <span
-            >某房建工程基础施工，如下图所示。请根据提供的设计图和已知条件，完成下列要求内容（除题中另有说明外，均按2018版定额计算规则（小数点保留2位，第3位四舍五入）。
-          </span>
+          <span>{{ qs1 }}</span>
           <br />
-          <span>
-            试计算2轴上基础梁【非泵送商品混凝土C30(480元/m3)混凝土，断面尺寸为300*500，底标高同ZJ】浇捣工程量，并完成定额的套用，计算基础梁定额清单分项工程招标控制价。
-          </span>
+          <span>{{ qs2 }}</span>
         </div>
         <div class="block3-3">
           <div class="block3-3-1">
@@ -44,13 +40,18 @@
         </div>
         <div class="block3-5">
           <div class="title">
-            <span>一. 2轴基础梁工程量计量</span>
+            <span>{{ title }}</span>
           </div>
           <div class="title1">
-            <span>(1) 2轴基础梁（主体）工程量计量</span>
+            <span>{{ title1 }}</span>
           </div>
-          <div class="qsa">
-            <span class="abcd">A</span>
+          <div class="qsa" v-for="(item, i) in asw1" :key="i">
+            <span class="abcd">{{ item.a1 }}</span>
+            <span class="asw">{{ item.a2 }}</span>
+            <div class="chose"></div>
+          </div>
+          <!-- <div class="qsa">
+            <span class="abcd">{{asw1[1].a1}}</span>
             <span class="asw">梁宽B（m）</span>
             <div class="chose"></div>
           </div>
@@ -63,16 +64,16 @@
             <span class="abcd">A</span>
             <span class="asw">梁宽B（m）</span>
             <div class="chose"></div>
-          </div>
-          <div class="qsa">
-            <span class="abcd">A</span>
-            <span class="asw">梁宽B（m）</span>
-            <div class="chose"></div>
-          </div>
+          </div> -->
           <div class="title1">
-            <span>(2) 2轴基础梁与ZJ2形成的三棱柱搭头</span>
+            <span>{{ title2 }}</span>
           </div>
-          <div class="qsa">
+          <div class="qsa" v-for="(item, i) in asw2" :key="i">
+            <span class="abcd">{{ item.a1 }}</span>
+            <span class="asw">{{ item.a2 }}</span>
+            <div class="chose"></div>
+          </div>
+          <!-- <div class="qsa">
             <span class="abcd">A</span>
             <span class="asw">梁宽B（m）</span>
             <div class="chose"></div>
@@ -86,12 +87,7 @@
             <span class="abcd">A</span>
             <span class="asw">梁宽B（m）</span>
             <div class="chose"></div>
-          </div>
-          <div class="qsa">
-            <span class="abcd">A</span>
-            <span class="asw">梁宽B（m）</span>
-            <div class="chose"></div>
-          </div>
+          </div> -->
           <div class="block4">
             <button class="bt dati" @click="updates(time)">提交答案</button>
           </div>
@@ -102,11 +98,60 @@
 </template>
 
 <script>
-import "../assets/js/cloud"
+import "../assets/js/cloud";
 export default {
   data() {
     return {
       time: 0,
+      qs1: "某房建工程基础施工，如下图所示。请根据提供的设计图和已知条件，完成下列要求内容（除题中另有说明外，均按2018版定额计算规则（小数点保留2位，第3位四舍五入）。",
+      qs2: "试计算2轴上基础梁【非泵送商品混凝土C30(480元/m3)混凝土，断面尺寸为300*500，底标高同ZJ】浇捣工程量，并完成定额的套用，计算基础梁定额清单分项工程招标控制价。",
+      title: "一.  2轴基础梁工程量计量",
+      title1: "(1)  2轴基础梁（主体）工程量计量",
+      title2: "(2)  2轴基础梁与ZJ2形成的三棱柱搭头",
+      asw1: [
+        {
+          a1: "A",
+          a2: " 梁宽B（m）",
+          a3: "0.3",
+        },
+        {
+          a1: "B",
+          a2: " 梁高H（m）",
+          a3: "0.5",
+        },
+        {
+          a1: "C",
+          a2: " 梁长（m）",
+          a3: "5.6",
+        },
+        {
+          a1: "D",
+          a2: " 体积（m³）",
+          a3: "0.84",
+        },
+      ],
+      asw2: [
+        {
+          a1: "A",
+          a2: " 三棱柱底面长直角边（m）",
+          a3: "0.7",
+        },
+        {
+          a1: "B",
+          a2: " 三棱柱底面短直角边（m）",
+          a3: "0.15",
+        },
+        {
+          a1: "C",
+          a2: " 三棱柱高（m）",
+          a3: "0.3",
+        },
+        {
+          a1: "D",
+          a2: " 搭头总体积（m³）",
+          a3: "0.03",
+        },
+      ],
     };
   },
   methods: {
@@ -237,14 +282,14 @@ export default {
 }
 
 .asw {
+  width: 165px;
   margin-left: 15px;
   font-size: 12px;
   color: #141313;
 }
 
 .chose {
-  margin-left: 80px;
-  width: 110px;
+  width: 90px;
   height: 26px;
   background: #ffffff;
   border-radius: 6px;

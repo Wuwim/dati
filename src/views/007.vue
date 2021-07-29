@@ -9,7 +9,7 @@
       <div class="block2"></div>
       <div class="block3">
         <div class="block3-1">
-          <span>请选择题目</span>
+          <span>正确率</span>
         </div>
         <div class="block3-2">
           <div class="tm-box">
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import "../assets/js/cloud"
+import "../assets/js/cloud";
 export default {
   data() {
     return {
@@ -71,7 +71,10 @@ export default {
 
 <style scoped>
 .block3-1 {
-  padding-top: 60px;
+  padding-top: 40px;
+}
+.block3-2 {
+  padding-top: 10px;
 }
 .tm-box {
   margin-top: 20px;

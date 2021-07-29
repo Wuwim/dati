@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import "../assets/js/cloud"
+import "../assets/js/cloud";
 export default {
   data() {
     return {
@@ -70,62 +70,6 @@ export default {
     },
   },
 };
-
-// $(function () {
-//   var obj = $(".cloud1");
-//   var x = obj.offset().left; //盒子距离左部的位置
-//   var y = obj.offset().top; //盒子距离顶部的位置
-//   var sx = 0; //x轴是否返回的状态，0是值++即正向移动，1是值--即返回
-//   var sy = 0;
-//   setInterval(function () {
-//     if (sx == 0) {
-//       obj.css("left", x++);
-//       // console.log(x);
-//     } else if (sx == 1) {
-//       obj.css("left", x--);
-//     }
-//     console.log(x);
-//     if (x <= 0) {
-//       sx = 0;
-//     } else if (x >= 0) {
-//       sx = 1;
-//     }
-//     if (sy == 0) {
-//       obj.css("top", y++);
-//     } else if (sy == 1) {
-//       obj.css("top", y--);
-//     }
-//     if (y <= -180) {
-//       sy = 0;
-//     } else if (y >= -50) {
-//       sy = 1;
-//     }
-//   }, 15);
-//   console.log(x);
-//   console.log(y);
-// });
-// $(function () {
-//   setInterval(myanimate, 2000);
-//   function myanimate() {
-//     var ko = true;
-//     if (ko) {
-//       $(".cloud").animate({ left: "+=200px" }, 1000);
-//       ko = false;
-//       // console.log("le" + ko);
-//     } else {
-//       $(".cloud").animate({ left: "-=200px" }, 1000);
-//       console.log(666);
-//       ko = true;
-//     }
-//     console.log("11" + ko);
-//   }
-// });
-
-// $(function () {
-//   $(".cloud").click(function () {
-//     $(".cloud").animate({ left: "+50px" }, "slow");
-//   });
-// });
 </script>
 
 <style scoped>

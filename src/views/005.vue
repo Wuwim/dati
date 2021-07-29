@@ -20,13 +20,9 @@
           </div>
         </div>
         <div class="block3-2">
-          <span
-            >某房建工程基础施工，如下图所示。请根据提供的设计图和已知条件，完成下列要求内容（除题中另有说明外，均按2018版定额计算规则（小数点保留2位，第3位四舍五入）。
-          </span>
+          <span>{{ qs1 }}</span>
           <br />
-          <span>
-            试计算2轴上基础梁【非泵送商品混凝土C30(480元/m3)混凝土，断面尺寸为300*500，底标高同ZJ】浇捣工程量，并完成定额的套用，计算基础梁定额清单分项工程招标控制价。
-          </span>
+          <span>{{ qs2 }}</span>
         </div>
         <div class="block3-3">
           <div class="block3-3-1">
@@ -44,9 +40,16 @@
         </div>
         <div class="block3-5">
           <div class="title1">
-            <span>(1) 2轴基础梁（主体）工程量计量</span>
+            <span>{{ title1 }}</span>
           </div>
-          <div class="qsa">
+          <div class="qsa" v-for="(item, i) in asw1" :key="i">
+            <span class="abcd" :style="'background:' + item.background">{{
+              item.a1
+            }}</span>
+            <span class="asw">{{ item.a2 }}</span>
+            <div class="chose">{{ item.a3 }}</div>
+          </div>
+          <!-- <div class="qsa">
             <span class="abcd">A</span>
             <span class="asw">梁宽B（m）</span>
             <div class="chose"></div>
@@ -60,16 +63,18 @@
             <span class="abcd">A</span>
             <span class="asw">梁宽B（m）</span>
             <div class="chose"></div>
-          </div>
-          <div class="qsa">
-            <span class="abcd">A</span>
-            <span class="asw">梁宽B（m）</span>
-            <div class="chose"></div>
-          </div>
+          </div> -->
           <div class="title1">
-            <span>(2) 2轴基础梁与ZJ2形成的三棱柱搭头</span>
+            <span>{{ title2 }}</span>
           </div>
-          <div class="qsa">
+          <div class="qsa" v-for="(item, i) in asw2" :key="i">
+            <span class="abcd" :style="'background:' + item.background">{{
+              item.a1
+            }}</span>
+            <span class="asw">{{ item.a2 }}</span>
+            <div class="chose">{{ item.a3 }}</div>
+          </div>
+          <!-- <div class="qsa">
             <span class="abcd">A</span>
             <span class="asw">梁宽B（m）</span>
             <div class="chose"></div>
@@ -83,12 +88,7 @@
             <span class="abcd">A</span>
             <span class="asw">梁宽B（m）</span>
             <div class="chose"></div>
-          </div>
-          <div class="qsa">
-            <span class="abcd">A</span>
-            <span class="asw">梁宽B（m）</span>
-            <div class="chose"></div>
-          </div>
+          </div> -->
           <div class="block4">
             <button class="bt xyt" @click="updates(time)">下一题</button>
             <button class="bt cxdt" @click="goBack()">重新答题</button>
@@ -106,6 +106,62 @@ export default {
     return {
       time: "",
       time1: 0,
+      qs1: "某房建工程基础施工，如下图所示。请根据提供的设计图和已知条件，完成下列要求内容（除题中另有说明外，均按2018版定额计算规则（小数点保留2位，第3位四舍五入）。",
+      qs2: "试计算2轴上基础梁【非泵送商品混凝土C30(480元/m3)混凝土，断面尺寸为300*500，底标高同ZJ】浇捣工程量，并完成定额的套用，计算基础梁定额清单分项工程招标控制价。",
+      title1: "(1)  2轴基础梁（主体）工程量计量",
+      title2: "(2)  2轴基础梁与ZJ2形成的三棱柱搭头",
+      asw1: [
+        {
+          a1: "√",
+          a2: "梁宽B（m）",
+          a3: "0.3",
+          background: "#36A843",
+        },
+        {
+          a1: "X",
+          a2: " 梁高H（m）",
+          a3: "0.5",
+          background: "#E72904",
+        },
+        {
+          a1: "√",
+          a2: " 梁长（m）",
+          a3: "5.6",
+          background: "#36A843",
+        },
+        {
+          a1: "√",
+          a2: " 体积（m³）",
+          a3: "0.84",
+          background: "#36A843",
+        },
+      ],
+      asw2: [
+        {
+          a1: "X",
+          a2: " 三棱柱底面长直角边（m）",
+          a3: "0.7",
+          background: "#E72904",
+        },
+        {
+          a1: "√",
+          a2: " 三棱柱底面短直角边（m）",
+          a3: "0.15",
+          background: "#36A843",
+        },
+        {
+          a1: "√",
+          a2: " 三棱柱高（m）",
+          a3: "0.3",
+          background: "#36A843",
+        },
+        {
+          a1: "√",
+          a2: " 搭头总体积（m³）",
+          a3: "0.03",
+          background: "#36A843",
+        },
+      ],
     };
   },
   created() {
@@ -242,23 +298,25 @@ export default {
   margin: 8px 0 8px 10px;
   padding: 2px 6px;
   border-radius: 50%;
-  background: #765af1;
   font-size: 15px;
   color: #fff;
 }
 
 .asw {
+  width: 165px;
   margin-left: 15px;
   font-size: 12px;
   color: #141313;
 }
 
 .chose {
-  margin-left: 80px;
-  width: 110px;
+  width: 90px;
   height: 26px;
   background: #ffffff;
   border-radius: 6px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 26px;
 }
 
 .block4 {
