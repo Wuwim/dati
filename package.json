@@ -9,6 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "element-plus": "^1.0.2-beta.55",
+    "element-ui": "^2.15.3",
+    "jquery": "^3.6.0",
+    "postcss-plugin-px2rem": "^0.8.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },
@@ -18,14 +22,17 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
+    "amfe-flexible": "^2.2.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "postcss-pxtorem": "^6.0.0"
   },
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "jquery": true
     },
     "extends": [
       "plugin:vue/vue3-essential",
