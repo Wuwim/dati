@@ -1,5 +1,14 @@
 <template>
   <div class="content">
+    <div class="biaotilan">
+      <img
+        @click="goBack()"
+        class="goback"
+        src="../assets/img/goback.png"
+        alt=""
+      />
+      <span class="biaoti-w1">建工课题答题系统</span>
+    </div>
     <div class="set-bg">
       <div class="block1">
         <img class="house" src="../assets/img/house.png" alt="" />
@@ -86,6 +95,9 @@ export default {
     this.getParams();
   },
   methods: {
+    goBack() {
+      this.$router.go(-1);
+    },
     goNext() {
       this.$router.push({
         path: "007",
@@ -182,7 +194,7 @@ $(function () {
   height: 42px;
   position: relative;
   top: -25px;
-  z-index: 3;
+  z-index: 6;
 }
 .block3 {
   top: -50px;

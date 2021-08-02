@@ -4,20 +4,41 @@ body {
 
 .content {
   display: flex;
+  height: 100vh;
   text-align: center;
   flex-direction: column;
 }
 
 .set-bg {
-  width: 100%;
-  height: 100%;
   background: url(~@/assets/img/bg1.jpg);
-  background-size: cover
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.biaotilan {
+  background: #FFFFFF;
+  display: flex;
+}
+
+.goback {
+  margin: 13px 0px 12px 14px;
+  width: 16px;
+  height: 19px;
+}
+
+.biaoti-w1 {
+  margin: 10px 0px 0px 91px;
+  font-size: 18px;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
 }
 
 .block1 {
   display: flex;
-  margin: 15px 10px 0 20px;
+  margin: 15px 10px 0px 20px;
+  position: relative;
 }
 
 .house {
@@ -38,14 +59,14 @@ body {
   height: 22px;
   position: absolute;
   top: 30px;
-  left: 320px;
+  left: 280px;
 }
 
 .block2 {
   display: flex;
   flex: 1;
   position: relative;
-  z-index: 3;
+  z-index: 6;
   top: -10px;
   margin-left: 8px;
   width: 360px;
@@ -61,7 +82,7 @@ body {
   flex-direction: column;
 
   position: relative;
-  z-index: 2;
+  z-index: 5;
   top: -20px;
   margin: 0 29px 95px 29px;
   background: linear-gradient(0deg, #2559fb, #5c6df3);

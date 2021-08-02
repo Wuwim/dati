@@ -10,7 +10,7 @@ import Seven from '../views/007.vue'
 
 const routes = [
   {
-    path: '/001',
+    path: '/',
     component: One
   },
   {

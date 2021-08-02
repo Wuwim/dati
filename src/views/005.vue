@@ -1,5 +1,14 @@
 <template>
   <div class="content">
+    <div class="biaotilan">
+      <img
+        @click="goBack()"
+        class="goback"
+        src="../assets/img/goback.png"
+        alt=""
+      />
+      <span class="biaoti-w1">建工课题答题系统</span>
+    </div>
     <div class="set-bg">
       <div class="block1">
         <img class="house" src="../assets/img/house.png" alt="" />
@@ -91,7 +100,7 @@
           </div> -->
           <div class="block4">
             <button class="bt xyt" @click="updates(time)">下一题</button>
-            <button class="bt cxdt" @click="goBack()">重新答题</button>
+            <button class="bt cxdt" @click="goAgain()">重新答题</button>
           </div>
         </div>
       </div>
@@ -171,6 +180,9 @@ export default {
   },
   methods: {
     goBack() {
+      this.$router.go(-1);
+    },
+    goAgain() {
       this.$router.push({
         path: "002",
       });

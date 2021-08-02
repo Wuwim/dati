@@ -16,7 +16,7 @@ $(function () {
     } else if (sx == 1) {
       obj.css("left", x--);
     }
-    if (x <= 30) {
+    if (x <= 10) {
       sx = 0;
     } else if (x >= 250) {
       sx = 1;
@@ -39,7 +39,7 @@ $(function () {
     }
     if (x1 <= 100) {
       sx1 = 0;
-    } else if (x1 >= 330) {
+    } else if (x1 >= 300) {
       sx1 = 1;
     }
     if (sy1 == 0) {

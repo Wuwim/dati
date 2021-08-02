@@ -1,5 +1,14 @@
 <template>
   <div class="content">
+    <div class="biaotilan">
+      <img
+        @click="goBack()"
+        class="goback"
+        src="../assets/img/goback.png"
+        alt=""
+      />
+      <span class="biaoti-w1">建工课题答题系统</span>
+    </div>
     <div class="set-bg">
       <div class="block1">
         <img class="house" src="../assets/img/house.png" alt="" />
@@ -27,7 +36,7 @@
         </div>
 
         <div class="block4">
-          <button class="bt btdl" @click="login()">登录</button>
+          <button class="bt btdl" @click="login()">登 录</button>
         </div>
       </div>
     </div>
@@ -44,6 +53,9 @@ export default {
     };
   },
   methods: {
+    goBack() {
+      this.$router.go(-1);
+    },
     login() {
       let reg = /^1[0-9]{10}$/;
       if (
@@ -85,6 +97,7 @@ export default {
 input {
   width: 164px;
   height: 44px;
+  box-shadow: 0px 3px 5px 0px rgba(36, 28, 198, 0.52);
   padding-left: 35px;
   font-size: 16px;
   border-radius: 4px;
